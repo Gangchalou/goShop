@@ -26,24 +26,32 @@ export const reqCaptcha = () => ajax('/api/captcha')
 /**
  * 账号密码登录
  */
-export const accountLogin = (name, pwd, captcha) => ajax('/api/login_pwd', {
+export const pwdLogin = (name, pwd, captcha) => ajax('/api/login_pwd', {
   name,
   pwd,
   captcha
 }, 'POST')
 
-/**
- * 获取短信验证码
+/*
+获取短信验证码
  */
-export const mobileCode = phone => ajax('/api/sendcode', {phone})
+export const sendCode = (phone) => ajax('/api/sendcode', {phone})
 
 /**
  * 手机号验证码登录
  */
-export const phoneLogin = (phone, code) => ajax('/api/login_sms', {phone, code}, 'POST')
+export const smsLogin = (phone, code) => ajax('/api/login_sms', {phone, code}, 'POST')
 
 /**
  * 获取用户信息(根据会话)
  */
 export const reqUser = () => ajax('/api/userinfo')
 
+//获取商家的食品列表
+export const reqShopGoods = () => ajax('/goods')
+
+//获取商家的评价列表
+export const reqShopRatings = () => ajax('/ratings')
+
+//获取商家的详情列表
+export const reqShopInfo = () => ajax('/info')

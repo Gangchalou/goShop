@@ -9,9 +9,11 @@
 import FooterGuide from './components/FooterGuide/FooterGuide.vue'
 export default {
 
-  created () {
-    // 异步获取address
+  mounted () {
+    // 通过action获取地址信息address
     this.$store.dispatch('getAddress')
+    //通过action获取用户信息
+    this.$store.dispatch('getUserInfo')
   },
   components: {
     FooterGuide
